@@ -1,15 +1,28 @@
 import "./index.css";
 import * as React from "react";
 import { createRoot } from "react-dom/client";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import {
+  createBrowserRouter,
+  Navigate,
+  RouterProvider,
+} from "react-router-dom";
 
 // Pages
-import Counter from "./pages/Counter";
+import Home from "./pages/Home";
+import Facility from "./pages/Facility";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Counter />,
+    element: <Home />,
+  },
+  {
+    path: "/facility",
+    element: <Facility />,
+  },
+  {
+    path: "*",
+    element: <Navigate to="/" replace />,
   },
 ]);
 
